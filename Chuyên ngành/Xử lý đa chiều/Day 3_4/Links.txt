@@ -1,0 +1,4 @@
+https://pair-code.github.io/understanding-umap/
+https://github.com/akcarsten/Independent_Component_Analysis
+https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf
+http://www.cs.toronto.edu/~hinton/absps/tsne.pdf

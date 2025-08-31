@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+%
+\usepackage[utf8]{vietnam}
+\usepackage{amscd,amsmath,amstext,amsfonts,amsbsy,amssymb,amsthm}
+\usepackage{multicol,graphicx,enumerate}
+\usepackage{array,multirow,longtable,slashbox}
+\usepackage{fancyhdr,booktabs}
+\usepackage[authoryear,round,longnamesfirst]{natbib}
+%
+\usepackage[unicode,colorlinks,linkcolor = blue,citecolor = blue]{hyperref}
+\usepackage{color,alltt}
+\usepackage{authblk}
+\usepackage[ddmmyyyy,hhmmss]{datetime}
+\usepackage{rotating}
+%\usepackage{enumitem}
+%
+\usepackage[margin = 2.5cm]{geometry}
+% setting up for caption of tables and figures
+\usepackage[width=.85\textwidth, font = small, labelfont = bf, labelsep = endash, textfont = it]{caption}
+
+\newtheorem{theorem}{{\bf Theorem}}%[section]
+\theoremstyle{definition} \newtheorem{exercise}[theorem]{\bf Bài tập}
+
+\setlength{\parskip}{6pt}
+\baselineskip = 15pt
+\setlength{\headheight}{15pt}
+
+\newcommand{\x}{\mathnormal{x}}
+\newcommand{\y}{\mathnormal{y}}
+\newcommand{\f}{\mathnormal{f}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+	
+\begin{center}
+	\textbf{\Large Trực quan hóa dữ liệu} \\
+	\vspace{0.5cm}
+	\textbf{-- Đề tài cuối kỳ --} \\
+	\vspace{0.5cm}
+	\textbf{19/12/2024}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+Chọn 1 trong các project dưới đây.
+
+\noindent
+\textbf{Chú ý}, với bất kỳ project nào được chọn, nhóm cần phải hoàn thành các yêu cầu sau:
+\begin{itemize}
+\item[1.] Bản đề xuất trực quan dữ liệu dữ liệu.
+\item[2.] Các mục tiêu trực quan mong muốn đạt được.
+\item[3.] Lựa chọn và sử dụng các biểu đồ trực quan dữ liệu phù hợp với mục tiêu đã đề ra. 
+\item[4.] Tạo thành 1 hoặc nhiều dashboard chứa các biểu đồ trực quan mong muốn.
+\item[5.] Viết các nhận xét và kết luận về các kết quả đã thu được sau quá trình trực quan.
+\end{itemize}
+Toàn bộ quá trình được tổng hợp lại dưới dạng file báo cáo (*.pdf, kèm hình minh họa của dashboard), và file Power BI *.pbix.
+
+
+\section*{Project 1 - Sports Data Analysis}
+Dữ liệu gồm thông tin của 18,207 cầu thủ, được tổng hợp trong 01 file dữ liệu \texttt{fifa\_eda\_stats.csv}, bao gồm 57 biến, chẳng hạn:
+
+\begin{itemize}
+\item \texttt{ID} - mã số của cầu thủ;
+\item \texttt{Name} - tên cầu thủ;
+\item \texttt{Age} - tuổi;
+\item \texttt{Nationality} - quốc tịch;
+\item \texttt{Overall} - điểm đánh giá tổng thể (tối đa 100);
+\item \texttt{Potential} - điểm đánh giá tiềm năng (tối đa 100);
+\item \texttt{Club} - tên câu lạc bộ đang chơi;
+\item \texttt{Value} - giá trị trên thị trường chuyển nhượng;
+\item \texttt{Wage} - tiền lương;
+\item \texttt{Preferred.Foot} - chân thuận;
+\item \texttt{Release.Clause} - chi phí giải phóng hợp đồng;
+\item \texttt{Height} - chiều cao;
+\item \texttt{Weight} - cân nặng;
+\item \texttt{Position} - vị trí thi đấu sở trường;
+\item và các biến khác đo các chỉ số đánh giá.
+\end{itemize}
+
+Chú ý có một số biến bị sai định dạng khi nhập vào file lưu trữ (số nhưng lưu ở dạng chữ), do đó cần hiệu chỉnh lại cho đúng trước khi xử lý chính.
+
+\section*{Project 2 - Paris 2024 Olympic Summer Games}
+Bộ dữ liệu Thế vận hội Olympic mùa hè Paris 2024 cung cấp thông tin toàn diện về Thế vận hội mùa hè được tổ chức vào năm 2024. Bộ dữ liệu này bao gồm nhiều khía cạnh khác nhau của sự kiện, bao gồm các quốc gia tham gia, vận động viên, môn thể thao, bảng xếp hạng huy chương và các chi tiết sự kiện chính. Tìm hiểu thêm về Thế vận hội Olympic trên trang web chính thức \href{https://olympics.com/en/paris-2024}{Olympic Paris 2024} và \href{https://en.wikipedia.org/wiki/2024_Summer_Olympics}{Wiki}. Các file dữ liệu bao gồm:
+\begin{itemize}
+\item \texttt{athletes.csv}: thông tin cá nhân về tất cả các vận động viên;
+\item \texttt{coaches.csv}: thông tin cá nhân về tất cả các huấn luyện viên;
+\item \texttt{events.csv}: tất cả các sự kiện có địa điểm;
+\item \texttt{medals.csv}: tất cả người giữ huy chương;
+\item \texttt{medals\_total.csv}: tất cả các huy chương (nhóm theo quốc gia);
+\item \texttt{medalists.csv}: tất cả những người giành huy chương;
+\item \texttt{nocs.csv}: tất cả các quốc gia thuộc liên đoàn Olympics thế giới - NOC (National Olympic Committees), bao gồm, code, country, country\_long;
+\item \texttt{schedule\_preliminary.csv}: lịch trình sơ bộ của tất cả các sự kiện;
+\item \texttt{schedule.csv}: lịch trình từng ngày của tất cả các sự kiện; 
+\item \texttt{teams.csv}: tất cả các đội;
+\item \texttt{technical\_officials.csv}: tất cả các quan chức kỹ thuật (referees, judges, jury members);
+\item \texttt{torch\_route.csv}: địa điểm rước đuốc;
+\item \texttt{vanues.csv}: tất cả các địa điểm tổ chức Olympic.
+\end{itemize}
+
+\section*{Project 3 - National Clothing Chain}
+Bộ dữ liệu về các chuỗi cung ứng quần áo trực tuyến quốc gia tại Mỹ cung cấp các thông tin hữu ích cho 1 chuỗi cửa hàng quần áo nghiên cứu tìm ra giải pháp nhằm tìm ra chiến lược kinh doanh mới. Các file dữ liệu bao gồm: 
+\begin{itemize}
+\item \texttt{census-data.xlsx}: dữ liệu được thu thập bởi US Census Bureau, bao gồm, average income, location, population, industry;
+\item \texttt{customer-list.xlsx}: danh sách khách hàng;
+\item \texttt{purchase-list.xlsx}: danh sách sản phẩm mua;
+\item \texttt{state-list.xlsx}: danh sách bang của chuỗi cửa hàng;
+\end{itemize}
+ngoài ra, dữ liệu về thời tiết có thể được truy xuất từ \href{https://www.currentresults.com/Weather/US/average-annual-state-temperatures.php#:~:text=Average%20Annual%20Temperature%20for%20Each%20US%20State%20,%20%2030%20%2012%20more%20rows%20}{Weather US}.
+\end{document}
