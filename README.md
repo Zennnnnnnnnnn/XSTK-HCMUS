@@ -16,11 +16,12 @@ Repository này tổng hợp các **tài liệu học tập, bài giảng và gi
 ## 👤 Tác giả
 - **Nguyễn Huy Quang**  
 - Sinh viên **Khoa Toán – Tin học**, khóa 2020, HCMUS
-- Học viên cao học **Thạc sĩ Khoa học Dữ liệu**, khóa 2023, HCMUS  
+- Học viên cao học **Khoa học Dữ liệu**, khóa 2023, HCMUS  
 
 ## 🏫 Trường Đại học Khoa học Tự Nhiên (HCMUS)
 - Khoa: Toán – Tin học  
-- Chuyên ngành: Xác suất Thống kê  
+- Chuyên ngành: Xác suất Thống kê
+- Ngành: Khoa học Dữ liệu  
 
 ---
 
