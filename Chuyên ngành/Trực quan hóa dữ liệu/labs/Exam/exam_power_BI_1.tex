@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+%
+\usepackage[utf8]{vietnam}
+\usepackage{amscd,amsmath,amstext,amsfonts,amsbsy,amssymb,amsthm}
+\usepackage{multicol,graphicx,enumerate}
+\usepackage{array,multirow,longtable,slashbox}
+\usepackage{fancyhdr,booktabs}
+\usepackage[authoryear,round,longnamesfirst]{natbib}
+%
+\usepackage[unicode,colorlinks,linkcolor = blue,citecolor = blue]{hyperref}
+\usepackage{color,alltt}
+\usepackage{authblk}
+\usepackage[ddmmyyyy,hhmmss]{datetime}
+\usepackage{rotating}
+%\usepackage{enumitem}
+%
+\usepackage[margin = 2.5cm]{geometry}
+% setting up for caption of tables and figures
+\usepackage[width=.85\textwidth, font = small, labelfont = bf, labelsep = endash, textfont = it]{caption}
+
+\newtheorem{theorem}{{\bf Theorem}}%[section]
+\theoremstyle{definition} \newtheorem{exercise}[theorem]{\bf Bài tập}
+
+\setlength{\parskip}{6pt}
+\baselineskip = 15pt
+\setlength{\headheight}{15pt}
+
+\newcommand{\x}{\mathnormal{x}}
+\newcommand{\y}{\mathnormal{y}}
+\newcommand{\f}{\mathnormal{f}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\begin{document}
+	
+\begin{center}
+	\textbf{\Large Trực quan hóa dữ liệu} \\
+	\vspace{0.5cm}
+	\textbf{-- Bài kiểm tra Power BI 1 --}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Yêu cầu:} hãy sử dụng các biểu đồ trực quan dữ liệu được học:
+\begin{itemize}
+\item biểu đồ tròn;
+\item biểu đồ thanh;
+\item biểu đồ thanh lồng nhau;
+\item heatmap;
+\item biểu đồ treemap;
+\item biểu đồ Mosaic;
+\item biểu đồ parallel set;
+\item histogram;
+\item biểu đồ boxplot;
+\item biểu đồ violin;
+\item biểu đồ ridgeline; 
+\end{itemize}
+để tạo thành 1 dashboard chứa các biểu đồ trực quan tối đa các tính chất của \textbf{một} trong các bộ dữ liệu được miêu tả dưới đây. Đồng thời, dashboard cũng cần thể hiện được tính tương tác với người dùng thông qua các bảng lọc, tách dữ liệu.
+
+\noindent
+\textbf{Chú ý:} chọn 1 trong số các dữ liệu dưới đây.
+
+\section*{Data 1 - Video Game Sales}
+Dữ liệu \texttt{vgsales.csv} cung cấp thông tin doanh thu của các trò chơi điện tử có doanh số bán ra lớn hơn 100.000 bản, từ 1980 tới 2020. Bao gồm các biến được quan sát như sau:
+\begin{itemize}
+\item \texttt{Rank}: thứ hạng theo doanh số tổng quát
+\item \texttt{Name}: tên của trò chơi
+\item \texttt{Platform}: nền tảng phát hành trò chơi (ví dụ: PC, PS4, ...)
+\item \texttt{Year}: năm phát hành
+\item \texttt{Genre}: Thể loại trò chơi
+\item \texttt{Publisher}: nhà phát hành trò chơi
+\item \texttt{NA\_Sales}: doanh số bán hàng tại Bắc Mỹ (đơn vị triệu \$)
+\item \texttt{EU\_Sales}: doanh số bán hàng tại Châu Âu (đơn vị triệu \$)
+\item \texttt{JP\_Sales}: doanh số bán hàng tại Nhật bản (đơn vị triệu \$)
+\item \texttt{Other\_Sales}: doanh số bán hàng tại các quốc gia khác (đơn vị triệu \$)
+\item \texttt{Global\_Sales}: tổng doanh số bán hàng trên toàn cầu (đơn vị triệu \$)
+\end{itemize}
+Có tổng cộng 16,598 trò chơi điện tử khác nhau được ghi chép lại.
+
+\section*{Data 2 - Netflix Movies and TV Shows}
+Netflix là một trong những nền tảng phát trực tuyến phương tiện truyền thông và video phổ biến nhất. Có hơn 8,000 phim hoặc chương trình truyền hình có sẵn trên nền tảng của Netflix, tính đến giữa năm 2021, đã có hơn 200 triệu Người đăng ký trên toàn cầu. Dữ liệu \texttt{netflix\_titles.csv} chứa các thông tin về danh sách tất cả các phim và chương trình truyền hình có sẵn trên Netflix, cùng với các chi tiết như - diễn viên, đạo diễn, xếp hạng, năm phát hành, thời lượng, v. v. cụ thể
+\begin{itemize}
+\item \texttt{show\_id}: chỉ số xác định duy nhất cho 1 phim hoặc chương trình truyền hình;
+\item \texttt{type}: thể loại của chương trình: Movie hoặc TV Show;
+\item \texttt{title}: tiêu đề của chương trình;
+\item \texttt{director}: tên đạo diễn
+\item \texttt{cast}: tên các diễn viên chính;
+\item \texttt{country}: tên quốc gia sản xuất;
+\item \texttt{date\_added}: ngày chương trình được thêm vào Netflix;
+\item \texttt{release\_year}: năm phát hành thực tế của chương trình;
+\item \texttt{rating}: phân hãng đánh giá nội dung phim dành cho 1 nhóm đối tượng; 
+\item \texttt{duration}: thời lượng của chương trình;
+\item \texttt{listed\_in}: danh mục nghệ thuật của chương trình/phim;
+\item \texttt{description}: mô tả về chương trình.
+\end{itemize}
+
+\section*{Data 3 - Fashion E-commerce sales}
+Bộ dữ liệu \texttt{Fashion\_Sales\_Analysis.xlsx} bao gồm các đơn hàng do khách hàng đặt trên nhiều nền tảng thương mại điện tử khác nhau, bao gồm Myntra, Ajio, Amazon, Flipkart, Nykaa, Meesho và các nền tảng khác. Bộ dữ liệu bao gồm nhiều mặt hàng thời trang, bao gồm các danh mục như quần jean, giày dép, váy dân tộc, kurta, sari, bộ, áo và váy phương Tây, phục vụ cho cả nam và nữ, cụ thể:
+\begin{itemize}
+\item \texttt{Index}: mã định danh duy nhất cho mỗi hàng trong tập dữ liệu;
+\item \texttt{Order ID}: mã định danh duy nhất cho mỗi đơn hàng đã đặt;
+\item \texttt{Cust ID}: mã định danh duy nhất cho mỗi khách hàng;
+\item \texttt{Gender}: giới tính của khách hàng;
+\item \texttt{Age}: tuổi của khách hàng;
+\item \texttt{Date}: ngày đặt hàng;
+\item \texttt{Status}: trạng thái đơn hàng (ví dụ: Cancelled, Delivered, Returned, Refunded);
+\item \texttt{Channel}: nền tảng thương mại điện tử được sử dụng để mua hàng (ví dụ: Amazon, Flipkart);
+\item \texttt{SKU}: đơn vị lưu kho (mã định danh duy nhất cho mỗi sản phẩm)
+\item \texttt{Category}: danh mục sản phẩm (ví dụ: quần jean, giày dép, sari);
+\item \texttt{Size}: kích thước của sản phẩm;
+\item \texttt{Qty}: số lượng sản phẩm đã đặt hàng;
+\item \texttt{Amount}: tổng số tiền của đơn hàng;
+\item \texttt{Ship-city}: thành phố mà đơn hàng được chuyển đến;
+\item \texttt{Ship-state}: tiểu bang mà đơn hàng được chuyển đến;
+\item \texttt{Ship-postal-code}: mã bưu chính của địa chỉ giao hàng;
+\item \texttt{B2B}: chỉ ra liệu đơn hàng có phải là đơn hàng doanh nghiệp với doanh nghiệp (B2B) hay không.
+\end{itemize}
+
+\end{document}
